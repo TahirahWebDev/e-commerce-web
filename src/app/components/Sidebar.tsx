@@ -10,7 +10,6 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ show, onClose, cartItems, removeItem }) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
-
   // Close sidebar when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

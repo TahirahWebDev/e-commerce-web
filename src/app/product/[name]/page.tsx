@@ -17,7 +17,6 @@ const products = [
   { name: "Respira", description: "Outdoor bar table and stool", price: "Rp 500.000", discount: "New", image: "/product8.jpg" },
 ];
 
-// Adjusted ProductPage for async params
 const ProductPage = async ({ params }: { params: Promise<{ name: string }> }) => {
   const resolvedParams = await params;  // Await to resolve the Promise
   const { name } = resolvedParams;
@@ -46,7 +45,8 @@ const ProductPage = async ({ params }: { params: Promise<{ name: string }> }) =>
       <h1 className="mt-5 mb-0 text-4xl text-center font-semibold">
         Related Products
       </h1>
-      <OurProducts showButton={true} showHeading={false} />
+      {/* Pass the products to OurProducts */}
+      <OurProducts showButton={true} showHeading={false} products={products} />
       <Footer />
     </div>
   );
