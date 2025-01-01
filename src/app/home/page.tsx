@@ -17,7 +17,7 @@ interface Product {
 
 const Home = async () => {
   // Use a relative URL instead of localhost to make sure it works in server-side rendering
-  const res = await fetch("http://localhost:3000/api/products");
+  const res = await fetch("/api/products");
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");
